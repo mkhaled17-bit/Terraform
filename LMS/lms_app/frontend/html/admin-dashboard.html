@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <script src="../js/auth-check.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>Admin Dashboard</h2>
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <div class="tabs">
+        <button id="user-tab" class="active" onclick="showTab('users')">Manage Users</button>
+        <button id="book-tab" onclick="showTab('books')">Manage Books</button>
+        <button id="borrow-tab" onclick="showTab('borrows')">Manage Borrows</button>
+    </div>
+
+    <!-- USERS -->
+    <div class="content" id="users-section">
+        <h3>Manage Users</h3>
+        <div class="form">
+            <input id="user-username" type="text" placeholder="Username">
+            <input id="user-password" type="password" placeholder="Password">
+            <button onclick="createUser()">Create User</button>
+            <button onclick="getUsers()">Get All Users</button>
+        </div>
+
+        <div class="form">
+            <input id="update-user-id" type="text" placeholder="User ID to update">
+            <input id="update-username" type="text" placeholder="New Username (optional)">
+            <input id="update-password" type="password" placeholder="New Password (optional)">
+            <button onclick="updateUser()">Update</button>
+            <input id="delete-user-id" type="text" placeholder="User ID to delete">
+            <button onclick="deleteUser()">Delete</button>
+        </div>
+
+
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="message" id="user-msg"></div>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="content" id="books-section" style="display:none;">
+        <h3>Manage Books</h3>
+        <div class="form">
+            <input id="book-title" type="text" placeholder="Title">
+            <input id="book-author" type="text" placeholder="Author">
+            <input id="book-isbn" type="text" placeholder="ISBN">
+            <input id="book-category" type="text" placeholder="Category">
+            <input id="book-available_copies" type="number" placeholder="Quantity">
+            <button onclick="createBook()">Add Book</button>
+            <button onclick="getBooks()">View All Books</button>
+        </div>
+
+
+        <div id="book-search-container" style="margin:10px 0;"></div>
+
+        <table id="book-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Available Copies</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="message" id="book-msg"></div>
+    </div>
+
+    <!-- BORROWS -->
+    <div class="content" id="borrows-section" style="display:none;">
+        <h3>Manage Borrow Requests</h3>
+        <button onclick="getBorrows()">Refresh</button>
+        <table id="borrow-table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Username</th>
+                    <th>Book</th>
+                    <th>available</th>
+                    <th>Borrow Date</th>
+                    <th>Due Date</th>
+                    <th>Return Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="message" id="borrow-msg"></div>
+    </div>
+
+   <script src="../js/script2.js"></script>
+</body>
+
+</html>

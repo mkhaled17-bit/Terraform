@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/auth-check.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>User Dashboard</h2>
+        <button onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+        <h3>Available Books</h3>
+        <input type="text" id="search" placeholder="Search by title, author, or category..." oninput="filterBooks()">
+        <table id="book-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Available Copies</th>
+                    <th>Requests</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="message" id="book-msg"></div>
+
+        <h3>Your Borrowed Books</h3>
+        <table id="borrow-table">
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="message" id="borrow-msg"></div>
+    </div>
+
+    <script src="../js/script3.js"></script>
+</body>
+
+</html>

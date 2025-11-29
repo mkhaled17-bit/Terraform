@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LMS — Login & Signup</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/auth-check.js"></script>
+</head>
+
+<body>
+  <div class="container" role="main" aria-labelledby="form-title">
+    <h2 id="form-title">Login</h2>
+
+    <label for="base-url">Base URL</label>
+    <input id="base-url" type="url" placeholder="http://localhost:5000" value="http://localhost:5000" />
+
+    <!-- Signup -->
+    <div id="signup-fields" style="display:none;margin-top:8px;">
+      <label for="signup-username">Username</label>
+      <input id="signup-username" type="text" placeholder="uname" />
+
+      <label for="signup-password">Password</label>
+      <input id="signup-password" type="password" placeholder="****" />
+
+      <label for="signup-role">Role</label>
+      <select id="signup-role">
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+      </select>
+
+      <button id="btn-signup" type="button">Sign Up</button>
+    </div>
+
+    <!-- Login -->
+    <div id="login-fields" style="margin-top:8px;">
+      <label for="login-username">Username</label>
+      <input id="login-username" type="text" placeholder="uname" />
+
+      <label for="login-password">Password</label>
+      <input id="login-password" type="password" placeholder="****" />
+
+      <button id="btn-login" type="button">Login</button>
+    </div>
+
+    <div class="toggle" id="toggle-text"></div>
+    <div class="message" id="message" role="status" aria-live="polite"></div>
+      </div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
