@@ -1,5 +1,6 @@
-# Terraform-specific files
+# Add or verify these lines in .gitignore
+bastion-ec2/
 .terraform/
 *.tfstate
-*.tfstate.*
-.terraform.lock.hcl
+bastion-ec2/
+
